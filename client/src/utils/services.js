@@ -1,4 +1,4 @@
-export const baseUrl = process.env.API_URL || 'http://localhost:5000/api';
+export const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export const postRequest = async (url, body) => {
     const response = await fetch(url, {

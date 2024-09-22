@@ -22,11 +22,9 @@ export const ChatContextProvider = ({ children, user }) => {
     const [notifications, setNotifications] = useState([]);
     const [allUsers, setAllUsers] = useState([]);
 
-    console.log('notifications', notifications);
-
     //socket
     useEffect(() => {
-        const newSocket = io(process.env.SOCKET_URL || 'http://localhost:3000');
+        const newSocket = io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:3000');
         setSocket(newSocket);
 
         return () => {

@@ -10,6 +10,8 @@ const Chat = () => {
     const { user } = useContext(AuthContext);
     const { userChats, isUserChatsLoading, updateCurrentChat } = useContext(ChatContext);
 
+    console.log('URL', import.meta.env.VITE_SOCKET_URL);
+
     return (
         <Container>
             <PotentialChats />
