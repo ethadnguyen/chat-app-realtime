@@ -8,7 +8,6 @@ let onlineUsers = [];
 
 
 io.on('connection', (socket) => {
-    console.log('new connection', socket.id);
 
     socket.on('addNewUser', (userId) => {
         !onlineUsers.some((user) => user.userId === userId) &&
@@ -16,7 +15,6 @@ io.on('connection', (socket) => {
                 userId,
                 socketId: socket.id
             });
-        console.log('onlineUsers', onlineUsers);
         io.emit('getOnlineUsers', onlineUsers);
     });
 
